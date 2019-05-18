@@ -26,7 +26,7 @@ id int not null unique generated always as identity
 email varchar(255) primary key not null,
 password varchar(255) not null,
 info int not null unique references Userinfo(id),
-role int not null references Roles(id)
+roles int not null references Roles(id)
 );
 
 create table Orders
@@ -77,16 +77,16 @@ insert into Roles (id, name) values
 (1, 'Администратор' ),
 (2, 'Заказчик');
 
-insert into Users(email, password, info, role) values 
+insert into Users(email, password, info, roles) values 
 ('APetrov@gmail.com', '1111', 1, 2),
 ('AIvanov@gmail.com', '22333', 2, 1),
-('SVasilyev@gmail.com', '34444', 2,1);
+('SVasilyev@gmail.com', '34444', 3,1);
 
 
 insert into Orders (users, created) values
-(1, '2019-04-03, 12:00:00'),
-(2, '2019-05-03, 12:30:05'),
-(3, '2019-06-05, 12:35:00';
+(1, '2019-04-03 12:00:00'),
+(2, '2019-05-03 12:30:05'),
+(3, '2019-06-05 12:35:00');
 
 insert into Supplier (name, address, phone, representative) values
 ('Рональд Макдональд', 'Санкт-Петербург, Митрофаньевское шоссе 5',
